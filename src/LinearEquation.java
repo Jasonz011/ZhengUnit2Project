@@ -5,6 +5,7 @@ public class LinearEquation {
     private int y1;
     private int x2;
     private int y2;
+    private String slope;
 
     // Constructor, initializing variables
     public LinearEquation(int x1, int y1, int x2, int y2) {
@@ -24,7 +25,10 @@ public class LinearEquation {
 
     // Calculates and returns the slope of the line
     public double slope() {
-        double m = (y2 - y1) / (x2 - x1);
+        double m = ((double) y2 - y1) / (x2 - x1);
+        String slope1 = (y2 - y1) + "/";
+        String slope2 = (x2 - x1) + "";
+        slope = slope1 + slope2;
         return roundedToHundredth(m);
     }
 
@@ -41,7 +45,7 @@ public class LinearEquation {
         }
         double m = slope();  // 5/4 not 1.25, fix this later
         double b = yIntercept();
-        return "y = " + m + "x + " + b;
+        return "y = " + slope + "x + " + b;
     }
 
     // Calculates and returns the y-coordinate on the line when given an x-coordinate

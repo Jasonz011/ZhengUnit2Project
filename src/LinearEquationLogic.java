@@ -8,6 +8,8 @@ public class LinearEquationLogic {
         System.out.print("Enter coordinate 2: ");
         String secondCoord = scan.nextLine();
         System.out.println();
+
+        // FIX THIS CODE NEXT
         String answer = "y";
         while (!answer.equals("n")) {
             int x1 = Integer.parseInt(firstCoord.substring(1, firstCoord.indexOf(",")));
@@ -19,6 +21,7 @@ public class LinearEquationLogic {
             System.out.println();
             System.out.print("Enter a value for x: ");
             double testX = scan.nextDouble();
+            scan.nextLine();
             System.out.println("The point on the line is : " + equation.coordinateForX(testX));
             System.out.println();
             System.out.print("Would you like to enter another pair of coordinates? y/n: ");
