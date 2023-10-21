@@ -50,7 +50,7 @@ public class LinearEquation {
 
     // Calculates and returns the y-coordinate on the line when given an x-coordinate
     public String coordinateForX(double x) {
-        double y = (slope() * x) + yIntercept();
+        double y = roundedToHundredth(slope() * x + yIntercept());
         return "(" + x + ", " + y + ")";
     }
 
@@ -65,7 +65,6 @@ public class LinearEquation {
     }
 
     private double roundedToHundredth(double toRound) {
-        double rounded = Math.round(toRound * 100) / 100.0;
-        return rounded;
+        return Math.round(toRound * 100) / 100.0;
     }
 }
