@@ -51,7 +51,7 @@ public class LinearEquation {
             int denM = (int) Math.abs(x2 - x1);
 
             if (m % 1 == 0 && m != 1 && m != -1) {
-                eq += (int) m;
+                eq += (int) m + "x";
             } else if (m == 1) {
                 eq += "x";
             } else if (m == -1) {
