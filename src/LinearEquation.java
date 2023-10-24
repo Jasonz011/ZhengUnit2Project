@@ -40,12 +40,39 @@ public class LinearEquation {
 
     // Calculates and returns the linear equation of the line that goes through given points
     public String equation() {
-        if (y1 == y2) {
-            return "y = " + y1;
-        }
-        double m = slope();  // 5/4 not 1.25, fix this later
+        double m = slope();
         double b = yIntercept();
-        return "y = " + slope + "x + " + b;
+        String eq = "y = ";
+
+        if (y1 == y2) {
+            eq += (int) y1;
+        } else {
+            int numM = (int) Math.abs(y2 - y1);
+            int denM = (int) Math.abs(x2 - x1);
+
+            if (m % 1 == 0 && m != 1 && m != -1) {
+                eq += (int) m;
+            } else if (m == 1) {
+                eq += "x";
+            } else if (m == -1) {
+                eq += "-x";
+            } else {
+                if (m < 0) {
+                    eq += "-";
+                }
+                eq += numM + "/" + denM + "x";
+            }
+
+            if (b != 0) {
+                if (b > 0) {
+                    eq += " + " + roundedToHundredth(b);
+                } else {
+                    eq += " - " + roundedToHundredth(Math.abs(b));
+                }
+            }
+        }
+
+        return eq;
     }
 
     // Calculates and returns the y-coordinate on the line when given an x-coordinate
